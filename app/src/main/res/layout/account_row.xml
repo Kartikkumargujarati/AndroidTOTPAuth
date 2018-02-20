@@ -23,22 +23,36 @@
         <TextView
             android:id="@+id/totp_pin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:gravity="right"
-            android:orientation="horizontal">
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/timer_counter_tv"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"/>
 
             <ProgressBar
-                android:id="@+id/barTimer"
+                android:id="@+id/timer_progress"
+                android:gravity="center_vertical"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/progress_loading"
+                android:background="@drawable/progress_circle"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="32dip"
-                android:layout_height="32dip"
-                android:layout_centerInParent="true"
-                android:progressDrawable="@drawable/circular_progress_bar" />
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"/>
+
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>
