@@ -15,4 +15,14 @@ class AuthAccount(private val count: Int) {
     val authority = uri.authority
     val secret = uri.getQueryParameter("secret") + count
 
+    fun getProperPathName(pName: String ): String {
+        if (!pName.startsWith("/")) {
+            return ""
+        }
+        val user = pName.substring(1).trim({ it <= ' ' })
+        return if (user.length == 0) {
+            "" // only white spaces.
+        } else user
+    }
+
 }
